@@ -1,0 +1,6 @@
+$color-primary: hsl(267, 66%, 60%);
+$color-secondary: hsl(317, 100%, 74%);
+$color-tertiary: hsl(165, 56%, 74%);
+$color-light: lighten($color-secondary, 5%);
+$color-light2: lighten($color-primary, 5%);
+$color-dark: darken($color-primary, 10%);

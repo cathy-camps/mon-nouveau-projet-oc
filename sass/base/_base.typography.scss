@@ -1,0 +1,29 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.logo {
+  font-family: Shrikland, sans-serif;
+}
+
+h1 h2 {
+  font-family: Shrikland, sans-serif;
+}
+
+h1{
+  font-size: 28px;
+}
+
+h2{
+  font-size: 20px;
+  color: black;
+}
+/*# sourceMappingURL=main.css.map */
