@@ -42,12 +42,13 @@ h2 {
   z-index: 100;
   position: fixed;
   top: 0px;
+  transition-duration: 2s;
 }
 
 .lds-default {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
 }
 
 .lds-default div {
@@ -169,6 +170,11 @@ h2 {
     transform: scale(2.5);
   }
 }
+.lds-default div {
+  -webkit-animation: loading-remove 2s forwards;
+          animation: loading-remove 2s forwards;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -283,6 +289,7 @@ li {
 }
 
 #rest-list {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -295,28 +302,38 @@ li {
   margin-left: -220px;
   margin-bottom: 0;
 }
+#rest-list h2 {
+  position: absolute;
+  top: 200px;
+}
 #rest-list p {
+  position: absolute;
+  top: 240px;
   color: rgb(125, 122, 122);
+  z-index: 1;
 }
 
 .restaurants {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   margin-top: 30px;
-  width: 90%;
+  width: 85%;
   height: 280px;
   border-radius: 25px;
   background-color: white;
+  overflow: hidden;
 }
 .restaurants img {
-  width: 100%;
+  width: 150%;
   height: 190px;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 25px;
   padding: 0px;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
 }
 .restaurants .heart {
   position: absolute;

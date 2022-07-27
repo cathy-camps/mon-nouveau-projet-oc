@@ -19,12 +19,13 @@
     z-index: 100;
     position: fixed;
     top:0px;
+    transition-duration: 2s;
   }
 
   .lds-default {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
 
   .lds-default div {
@@ -111,6 +112,11 @@
       transform: scale(2.5);
     }
   }
+
+  .lds-default div{
+    animation: loading-remove 2s forwards;
+  }
+
   
 .logo{
     display: flex;
@@ -215,6 +221,7 @@
       }
 
       #rest-list{
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -226,27 +233,37 @@
         margin-left: -220px;
         margin-bottom: 0;
         }
+        & h2{
+          position: absolute;
+          top: 200px;
+        }
         & p{
+          position: absolute;
+          top: 240px;
           color: rgb(125, 122, 122);
+          z-index: 1;
         }  
       }
 
         .restaurants{
           position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          display: block;
           margin-top: 30px;
-          width: 90%;
+          width: 85%;
           height: 280px;
           border-radius: 25px;
           background-color: white;
+          overflow: hidden;
             & img{
-              width: 100%;
+              width: 150%;
               height: 190px;
-              object-fit: cover;
               border-radius: 25px;
               padding: 0px;
+              position: absolute;
+              object-fit: cover;
+              top: 50%;
+              left: 50%;
+              transform : translate(-50%, -75%);
             }
             .heart{
               position: absolute;
