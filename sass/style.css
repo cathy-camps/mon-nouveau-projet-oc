@@ -30,7 +30,7 @@ h2 {
 /*# sourceMappingURL=main.css.map */
 /*# sourceMappingURL=main.css.map */
 .wrapper {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   background: url(images/loading-ohmyfood.png);
@@ -42,7 +42,8 @@ h2 {
   z-index: 100;
   position: fixed;
   top: 0px;
-  transition-duration: 2s;
+  -webkit-animation: loading-remove 2s forwards;
+          animation: loading-remove 2s forwards;
 }
 
 .lds-default {
@@ -154,36 +155,53 @@ h2 {
 }
 
 @-webkit-keyframes lds-default {
-  0%, 20%, 80%, 100% {
+  0%, 20% {
     transform: scale(1.5);
+    opacity: 1;
   }
   50% {
     transform: scale(2.5);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
   }
 }
 
 @keyframes lds-default {
-  0%, 20%, 80%, 100% {
+  0%, 20% {
     transform: scale(1.5);
+    opacity: 1;
   }
   50% {
     transform: scale(2.5);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
   }
 }
-.lds-default div {
-  -webkit-animation: loading-remove 2s forwards;
-          animation: loading-remove 2s forwards;
-}
-
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.logo .logo img {
+  padding-top: 25px;
+}
 
 .logo img {
   width: 45%;
-  padding-top: 25px;
 }
 
 .form-location {
@@ -336,23 +354,28 @@ li {
   transform: translate(-50%, -75%);
 }
 .restaurants .heart {
-  position: absolute;
+  position: relative;
   right: 35px;
   bottom: 30px;
   font-size: 22px;
-  z-index: 0;
-  background: white;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.5s 0.9s;
+  background-image: white;
   text-decoration: none;
+  cursor: pointer;
+  transition: heart 1000ms;
 }
-.restaurants .heart:hover {
+.restaurants .heart:hover:before {
+  content: "heart";
+  transition: transform 600ms ease-in-out;
+  transform: scale(0);
   position: absolute;
-  background-color: hsl(267deg, 66%, 60%);
-  z-index: 1;
+  z-index: 0;
+  top: 3px;
+  right: 10px;
+  overflow: hidden;
   -webkit-background-clip: text;
           background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
 }
 
 footer {

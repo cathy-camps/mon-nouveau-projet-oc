@@ -4,16 +4,16 @@
   "description": "Formation développeur web OpenClassrooms Projet n°3 : ohmyfood Dynamiser une page web avec des animations CSS",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss: ./styles.css"
+    "sass": "sass --watch ./sass/style.scss: ./style.css, ./sass/style2.scss: ./style2.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cathy-camps/mon-nouveau-projet-oc.git"
+    "url": "git+https://github.com/cathy-camps/mon-projet-openclassrooms.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cathy-camps/mon-nouveau-projet-oc/issues"
+    "url": "https://github.com/cathy-camps/mon-projet-openclassrooms/issues"
   },
-  "homepage": "https://github.com/cathy-camps/mon-nouveau-projet-oc#readme"
+  "homepage": "https://github.com/cathy-camps/mon-projet-openclassrooms#readme"
 }

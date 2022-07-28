@@ -1,13 +1,14 @@
 @import "./utils/_variables";
-@import"./components/_buttons";
 @import "./base/_base.typography";
+@import"./components/_buttons";
+@import"./layouts/_header";
 /*# sourceMappingURL=main.css.map */
 
 @media screen and (min-width: 375px) and (max-width:768px){
 }
 
   .wrapper{
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     background: url(images/loading-ohmyfood.png);
@@ -19,8 +20,9 @@
     z-index: 100;
     position: fixed;
     top:0px;
-    transition-duration: 2s;
+    animation: loading-remove 2s forwards;
   }
+
 
   .lds-default {
     position: absolute;
@@ -105,27 +107,29 @@
     left: 62px;
   }
   @keyframes lds-default {
-    0%, 20%, 80%, 100% {
+    0%, 20% {
       transform: scale(1.5);
+      opacity: 1;
     }
     50% {
       transform: scale(2.5);
+      opacity: 0.5;
+    }
+    80%{
+      transform: scale(1.5);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
     }
   }
 
-  .lds-default div{
-    animation: loading-remove 2s forwards;
-  }
-
-  
 .logo{
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .logo img{
-    width: 45%;
-    padding-top: 25px;
+   @include header;
   }
+  .logo img{
+    width: 45%;}
 
 .form-location{
     margin-top: 20px;
@@ -266,23 +270,28 @@
               transform : translate(-50%, -75%);
             }
             .heart{
-              position: absolute;
+              position: relative;
               right: 35px;
               bottom: 30px;
               font-size: 22px;
-              z-index: 0;
-              background: white;
-              overflow: hidden;
-              cursor: pointer;
-              transition: 0.5s 0.9s;
+              background-image: white;
               text-decoration: none;
+              cursor: pointer;
+              transition: heart 1000ms;
             }
 
-            .heart:hover{
+            .heart:hover:before{
+              content: "heart";
+              transition: transform 600ms ease-in-out;
+              transform: scale(0);
               position: absolute;
-              background-color: $color-primary;
-              z-index: 1;
+              z-index: 0;
+              top: 3px;
+              right: 10px;
+              overflow: hidden;
               background-clip: text;
+              color: transparent;
+              background-image: linear-gradient($color-secondary, $color-primary);
             }
         }
 

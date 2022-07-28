@@ -1,0 +1,58 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.logo {
+  font-family: Shrikland, sans-serif;
+}
+
+h1 h2 {
+  font-family: Shrikland, sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+  color: black;
+}
+
+/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=main.css.map */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+    width: 55%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.logo i{
+  color: black;
+  margin-top: 15px;
+}
+
+.photo-accueil img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+
+
+/*# sourceMappingURL=style2.css.map */

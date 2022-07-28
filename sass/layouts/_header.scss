@@ -1,0 +1,9 @@
+@mixin header{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    .logo img{
+        padding-top: 25px;
+    } 
+}
+  
