@@ -10,8 +10,12 @@ body {
   font-family: Roboto;
 }
 
+.logo {
+  font-family: Shrikhand, sans-serif;
+}
+
 h1, h2, h3 {
-  font-family: Shrikland, sans-serif;
+  font-family: Shrikhand, sans-serif;
 }
 
 h1 {
@@ -25,6 +29,7 @@ h2 {
 
 /*# sourceMappingURL=main.css.map */
 /*# sourceMappingURL=main.css.map */
+
 .wrapper {
   display: none;
   justify-content: flex-end;
@@ -55,25 +60,10 @@ h2 {
   font-size: 40px;
 }
 
-@-webkit-keyframes lettre {
-  0% {
-    color: hsl(267deg, 66%, 60%);
-    text-shadow: 0 0 8px #772bd4;
-  }
-  80% {
-    color: hsl(317deg, 100%, 74%);
-    text-shadow: none;
-  }
-  100% {
-    color: hsl(165deg, 56%, 74%);
-    text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
-  }
-}
-
 @keyframes lettre {
   0% {
     color: hsl(267deg, 66%, 60%);
-    text-shadow: 0 0 8px #772bd4;
+    text-shadow: 0 0 8px hsl(267, 66%, 50%);
   }
   80% {
     color: hsl(317deg, 100%, 74%);
@@ -122,6 +112,7 @@ h2 {
   position: absolute;
   width: 120px;
   height: 120px;
+  animation: loading-remove 2s forwards;
 }
 
 .lds-default div {
@@ -130,8 +121,8 @@ h2 {
   height: 6px;
   background: hsl(267deg, 66%, 60%);
   border-radius: 50%;
-  -webkit-animation: lds-default 2s linear;
-          animation: lds-default 2s linear;
+  -webkit-animation: lds-default 1.2s linear infinite;
+          animation: lds-default 1.2s linear infinite;
 }
 
 .lds-default div:nth-child(1) {
@@ -226,25 +217,6 @@ h2 {
   left: 62px;
 }
 
-@-webkit-keyframes lds-default {
-  0%, 20% {
-    transform: scale(1.5);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(2.5);
-    opacity: 0.5;
-  }
-  80% {
-    transform: scale(1.5);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
 @keyframes lds-default {
   0%, 20% {
     transform: scale(1.5);
@@ -263,6 +235,8 @@ h2 {
     opacity: 0;
   }
 }
+
+
 .logo {
   display: flex;
   align-items: center;
@@ -425,28 +399,33 @@ li {
   left: 50%;
   transform: translate(-50%, -75%);
 }
+
+.new::after{
+  content: "Nouveau";
+  position:absolute;
+  top: 10px;
+  left: 240px;
+  width: 100px;
+  height: 20px;
+  background-color:  hsl(165deg, 56%, 74%);
+}
+
 .restaurants .heart {
   position: absolute;
   right: 35px;
   bottom: 30px;
   font-size: 22px;
-  background: white;
-  border: 1px solid transparent;
   cursor: pointer;
-  transition: heart 1s;
 }
+
 .restaurants .heart:hover {
-  transition: transform 600ms ease-in-out;
-  transform: scale(0);
-  position: absolute;
-  z-index: 0;
-  top: 3px;
-  right: 10px;
-  overflow: hidden;
-  -webkit-background-clip: text;
-          background-clip: text;
   color: transparent;
-  background-image: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background:linear-gradient(to top right, #FF79DA, #9356DC);
+  /*background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));*/
+  transition: transform 1s ease-in-out;
 }
 
 footer {

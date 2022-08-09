@@ -1,10 +1,10 @@
 {
   "name": "mon-projet-openclassrooms",
   "version": "1.0.0",
-  "description": "Formation développeur web OpenClassrooms Projet n°3 : ohmyfood Dynamiser une page web avec des animations CSS",
+  "description": "Formation développeur web OpenClassrooms Projet n°3 : ohmyfood : dynamiser une page web avec des animations CSS",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss: ./style.css, ./sass/style2.scss: ./style2.css"
+    "sass": "sass --watch ./sass/style.scss: ./css/style.css, ./sass/style2.scss: ./css/style2.css"
   },
   "repository": {
     "type": "git",

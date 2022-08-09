@@ -7,22 +7,76 @@
 @media screen and (min-width: 375px) and (max-width:768px){
 }
 
-  .wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(images/loading-ohmyfood.png);
-    background-position: center;
-    background-repeat: repeat-y;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    position: fixed;
-    top:0px;
-    animation: loading-remove 2s forwards;
-  }
+.wrapper{
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  background: url(images/loading-ohmyfood.png);
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  top:0px;
+  animation: loading-remove 2s forwards;
+}
 
+.loading{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.lettre{
+  font-size: 40px;
+}
+
+@keyframes lettre{
+  0%{
+    color: $color-primary;
+    text-shadow: 0 0 8px $color-dark;
+  }
+  80%{
+    color: $color-secondary;
+    text-shadow: none;
+  }
+  100%{
+    color: $color-tertiary;
+    text-shadow: 0 0 8px $color-tertiary;
+  }
+}
+
+.lettre:nth-child(1){
+  animation-delay: 0.1s;
+  &:nth-child(2){
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3){
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4){
+    animation-delay: 0.4s;
+  }
+  &:nth-child(5){
+    animation-delay: 0.5s;
+  }
+  &:nth-child(6){
+    animation-delay: 0.6s;
+  }
+  &:nth-child(7){
+    animation-delay: 0.7s;
+  }
+}
+
+.loading{
+  opacity : 0;
+  transition: opacity 2s ease-in-out;
+}
 
   .lds-default {
     position: absolute;
@@ -36,7 +90,7 @@
     height: 6px;
     background: $color-primary;
     border-radius: 50%;
-    animation: lds-default 1.2s linear infinite;
+    animation: lds-default 2s linear;
   }
   .lds-default div:nth-child(1) {
     background: $color-secondary;
@@ -106,6 +160,7 @@
     top: 52px;
     left: 62px;
   }
+
   @keyframes lds-default {
     0%, 20% {
       transform: scale(1.5);
@@ -136,11 +191,9 @@
     width: 100%;
     height:50px;
     background-color: rgb(243, 240, 240);
-
     & .search{
         text-align: center;
         border-top: 3px solid rgb(227, 224, 224);}
-
     & .city-search{
         padding-left: 25px;
         border-style: hidden;
@@ -270,18 +323,17 @@
               transform : translate(-50%, -75%);
             }
             .heart{
-              position: relative;
+              position: absolute;
               right: 35px;
               bottom: 30px;
               font-size: 22px;
-              background-image: white;
-              text-decoration: none;
+              background: white;
+              border: 1px solid transparent;
               cursor: pointer;
-              transition: heart 1000ms;
+              transition: heart 1s;
             }
 
-            .heart:hover:before{
-              content: "heart";
+            .heart:hover{
               transition: transform 600ms ease-in-out;
               transform: scale(0);
               position: absolute;
