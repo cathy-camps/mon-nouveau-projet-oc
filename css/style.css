@@ -10,14 +10,6 @@ body {
   font-family: Roboto;
 }
 
-.logo {
-  font-family: Shrikhand, sans-serif;
-}
-
-h1, h2, h3 {
-  font-family: Shrikhand, sans-serif;
-}
-
 h1 {
   font-size: 28px;
 }
@@ -31,7 +23,7 @@ h2 {
 /*# sourceMappingURL=main.css.map */
 
 .wrapper {
-  display: none;
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   background: url(images/loading-ohmyfood.png);
@@ -400,12 +392,18 @@ li {
   transform: translate(-50%, -75%);
 }
 
+.new{
+  position: relative;
+  color: rgb(18, 122, 87);
+  text-align: center;
+}
+
 .new::after{
   content: "Nouveau";
   position:absolute;
   top: 10px;
-  left: 240px;
-  width: 100px;
+  left: 210px;
+  width: 80px;
   height: 20px;
   background-color:  hsl(165deg, 56%, 74%);
 }
@@ -424,8 +422,8 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background:linear-gradient(to top right, #FF79DA, #9356DC);
-  /*background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));*/
   transition: transform 1s ease-in-out;
+  /*background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));*/
 }
 
 footer {

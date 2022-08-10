@@ -26,7 +26,7 @@ h2 {
 /*# sourceMappingURL=main.css.map */
 /*# sourceMappingURL=main.css.map */
 .wrapper {
-  display: none;
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   background: url(images/loading-ohmyfood.png);
@@ -49,10 +49,40 @@ h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.loading .lettre {
+  font-size: 40px;
 }
 
-.lettre {
-  font-size: 40px;
+.lettre:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.lettre:nth-child(1):nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.lettre:nth-child(1):nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.lettre:nth-child(1):nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.lettre:nth-child(1):nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.lettre:nth-child(1):nth-child(6) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+.lettre:nth-child(1):nth-child(7) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
 
 @-webkit-keyframes lettre {
@@ -84,40 +114,6 @@ h2 {
     text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
   }
 }
-.lettre:nth-child(1) {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-}
-.lettre:nth-child(1):nth-child(2) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-}
-.lettre:nth-child(1):nth-child(3) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-}
-.lettre:nth-child(1):nth-child(4) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-.lettre:nth-child(1):nth-child(5) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-.lettre:nth-child(1):nth-child(6) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-}
-.lettre:nth-child(1):nth-child(7) {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
-}
-
-.loading {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-
 .lds-default {
   position: absolute;
   width: 120px;
@@ -430,23 +426,16 @@ li {
   right: 35px;
   bottom: 30px;
   font-size: 22px;
-  background: white;
-  border: 1px solid transparent;
   cursor: pointer;
-  transition: heart 1s;
 }
-.restaurants .heart:hover {
-  transition: transform 600ms ease-in-out;
-  transform: scale(0);
-  position: absolute;
-  z-index: 0;
-  top: 3px;
-  right: 10px;
-  overflow: hidden;
-  -webkit-background-clip: text;
-          background-clip: text;
+.restaurants.heart:hover {
+  transition: transform 1s ease-in-out;
   color: transparent;
-  background-image: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to top right, #FF79DA, #9356DC);
+  /*background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));*/
 }
 
 footer {
