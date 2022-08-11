@@ -10,10 +10,6 @@ body {
   font-family: Roboto;
 }
 
-h1, h2, h3 {
-  font-family: Shrikland, sans-serif;
-}
-
 h1 {
   font-size: 28px;
 }
@@ -421,21 +417,33 @@ li {
   left: 50%;
   transform: translate(-50%, -75%);
 }
-.restaurants .heart {
+
+.btn-favorite {
   position: absolute;
+  width: 18px;
+  height: 18px;
   right: 35px;
-  bottom: 30px;
-  font-size: 22px;
+  bottom: 50px;
+  border: none;
+  background: none;
+  font-size: 24px;
   cursor: pointer;
 }
-.restaurants.heart:hover {
-  transition: transform 1s ease-in-out;
+
+.heart--full {
+  opacity: 0;
+  z-index: 2;
   color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background: linear-gradient(to top right, #FF79DA, #9356DC);
-  /*background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));*/
+}
+
+.heart {
+  font-size: 24px;
+  position: absolute;
+}
+
+.heart:hover {
+  color: transparent;
+  opacity: 0;
 }
 
 footer {
