@@ -427,7 +427,6 @@ li {
   border: none;
   background: none;
   font-size: 24px;
-  cursor: pointer;
 }
 
 .heart--full {
@@ -436,7 +435,7 @@ li {
   color: transparent;
 }
 
-.heart {
+.heart, .heart--full {
   font-size: 24px;
   position: absolute;
 }
@@ -444,6 +443,15 @@ li {
 .heart:hover {
   color: transparent;
   opacity: 0;
+}
+
+.heart--full:hover, .btn:active {
+  opacity: 1;
+  background: linear-gradient(to top right, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
 }
 
 footer {
