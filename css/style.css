@@ -25,7 +25,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: url(images/loading-ohmyfood.png);
+  background-image: url(../images/loading-ohmyfood.png);
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
@@ -45,55 +45,45 @@ h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-.loading .lettre {
-  font-size: 40px;
+  margin-right:-30px;
+  margin-bottom: 70px;
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
 }
 
-.lettre:nth-child(1) {
+.loading .lettre {
+  font-size: 48px;
+  font-family: Shrikhand, sans-serif; 
+}
+
+.loading, .lettre:nth-child(1) {
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
 }
-.lettre:nth-child(1):nth-child(2) {
+
+.lettre:nth-child(2) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
-.lettre:nth-child(1):nth-child(3) {
+.lettre:nth-child(3) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
-.lettre:nth-child(1):nth-child(4) {
+.lettre:nth-child(4) {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
-.lettre:nth-child(1):nth-child(5) {
+.lettre:nth-child(5) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
-.lettre:nth-child(1):nth-child(6) {
+.lettre:nth-child(6) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
-.lettre:nth-child(1):nth-child(7) {
+.lettre:nth-child(7) {
   -webkit-animation-delay: 0.7s;
           animation-delay: 0.7s;
-}
-
-@-webkit-keyframes lettre {
-  0% {
-    color: hsl(267deg, 66%, 60%);
-    text-shadow: 0 0 8px #772bd4;
-  }
-  80% {
-    color: hsl(317deg, 100%, 74%);
-    text-shadow: none;
-  }
-  100% {
-    color: hsl(165deg, 56%, 74%);
-    text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
-  }
 }
 
 @keyframes lettre {
@@ -110,6 +100,24 @@ h2 {
     text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
   }
 }
+
+/*
+@keyframes lettre {
+  0% {
+    color: hsl(267deg, 66%, 60%);
+    text-shadow: 0 0 8px #772bd4;
+  }
+  80% {
+    color: hsl(317deg, 100%, 74%);
+    text-shadow: none;
+  }
+  100% {
+    color: hsl(165deg, 56%, 74%);
+    text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
+  }
+}
+*/
+
 .lds-default {
   position: absolute;
   width: 120px;
@@ -255,6 +263,7 @@ h2 {
     opacity: 0;
   }
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -262,7 +271,7 @@ h2 {
 }
 .logo .logo img {
   padding-top: 25px;
-}
+}*/
 
 .logo img {
   width: 45%;
@@ -380,27 +389,28 @@ li {
   padding-top: 35px;
   background-color: rgb(250, 246, 246);
 }
+
 #rest-list h1 {
-  margin-left: -220px;
+  margin-left: -170px;
   margin-bottom: 0;
 }
-#rest-list h2 {
+.rest-details h2 {
   position: absolute;
-  top: 200px;
+  top: 190px;
 }
-#rest-list p {
+
+.rest-details p {
   position: absolute;
-  top: 240px;
+  top: 220px;
   color: rgb(125, 122, 122);
-  z-index: 1;
+  z-index: 2;
 }
 
 .restaurants {
   position: relative;
-  display: block;
   margin-top: 30px;
   width: 85%;
-  height: 280px;
+  height: 260px;
   border-radius: 25px;
   background-color: white;
   overflow: hidden;
@@ -418,15 +428,31 @@ li {
   transform: translate(-50%, -75%);
 }
 
+.new{
+  position: relative;
+  color: rgb(49, 153, 118);
+  text-align:center;
+  font-size: 14px;
+}
+
+.new::after{
+  content: "Nouveau";
+  position:absolute;
+  top: 10px;
+  left: 230px;
+  width: 80px;
+  height: 26px;
+  background-color:  hsl(165, 56%, 74%);
+}
+
 .btn-favorite {
   position: absolute;
   width: 18px;
   height: 18px;
-  right: 35px;
-  bottom: 50px;
+  right: 40px;
+  bottom: 40px;
   border: none;
   background: none;
-  font-size: 24px;
 }
 
 .heart--full {
@@ -438,6 +464,8 @@ li {
 .heart, .heart--full {
   font-size: 24px;
   position: absolute;
+  left: 0;
+  bottom: -2px;
 }
 
 .heart:hover {
@@ -445,7 +473,7 @@ li {
   opacity: 0;
 }
 
-.heart--full:hover, .btn:active {
+.heart--full:hover, .btn-favorite:active {
   opacity: 1;
   background: linear-gradient(to top right, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
   -webkit-background-clip: text;

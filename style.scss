@@ -34,6 +34,7 @@
   transition: opacity 2s ease-in-out;
   & .lettre{
     font-size: 40px;
+    font-family: Shrikhand, sans-serif;
   }
 }
 
@@ -319,6 +320,13 @@
               transform : translate(-50%, -75%);
             }}
 
+            .rest-details{
+                width: 500px;
+                height: 90px;
+                background-color: white;
+                position: absolute;
+            }
+
             .btn-favorite {
               position: absolute;
               width: 18px;
@@ -339,6 +347,8 @@
             .heart, .heart--full{
               font-size: 24px;
               position: absolute;
+              left: 0px;
+              bottom: -2px;
             }
             
             .heart:hover{
