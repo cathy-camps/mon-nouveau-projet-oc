@@ -23,7 +23,7 @@ h2 {
 /*# sourceMappingURL=main.css.map */
 .wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   background-image: url(../images/loading-ohmyfood.png);
   background-position: center;
@@ -31,11 +31,25 @@ h2 {
   background-size: cover;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 1;
   position: fixed;
   top: 0px;
-  -webkit-animation: loading-remove 2s forwards;
-          animation: loading-remove 2s forwards;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation : wrapper 3500ms forwards;
+}
+
+@keyframes wrapper{
+  0%{
+    opacity : 1;
+  }
+  70%{
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 .loading {
@@ -45,83 +59,74 @@ h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-right:-30px;
+  margin-right: -50px;
   margin-bottom: 70px;
   opacity: 1;
-  transition: opacity 3s ease-in-out;
+  /*transition: opacity 3s ease-in-out;*/
+  animation: lettre 1.2s linear;
 }
 
 .loading .lettre {
-  font-size: 48px;
+  font-size: 40px;
   font-family: Shrikhand, sans-serif; 
+  letter-spacing: 6px;
 }
 
-.loading, .lettre:nth-child(1) {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-}
-
-.lettre:nth-child(2) {
+.lettre:nth-child(1) {
+  text-shadow: 0 0 7px rgb(255, 122, 217);
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
+
+.lettre:nth-child(2) {
+  text-shadow: 0 0 7px rgb(255, 122, 217);
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
 .lettre:nth-child(3) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-}
-.lettre:nth-child(4) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-.lettre:nth-child(5) {
+  text-shadow: 0 0 7px rgb(255, 122, 217);
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
+.lettre:nth-child(4) {
+  text-shadow: 0 0 7px rgb(255, 122, 217);
+  -webkit-animation-delay: 0.65s;
+          animation-delay: 0.65s;
+}
+.lettre:nth-child(5) {
+  text-shadow: 0 0 7px rgb(255, 122, 217);
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
 .lettre:nth-child(6) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
+  text-shadow: 0 0 7px rgb(255, 122, 217);
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 .lettre:nth-child(7) {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  text-shadow: 0 0 7px rgb(255, 122, 217);
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 @keyframes lettre {
   0% {
-    color: hsl(267deg, 66%, 60%);
-    text-shadow: 0 0 8px #772bd4;
+    color: rgb(146, 86, 220);
   }
-  80% {
-    color: hsl(317deg, 100%, 74%);
-    text-shadow: none;
+  50% {
+    color: rgb(255, 122, 217);
   }
   100% {
-    color: hsl(165deg, 56%, 74%);
-    text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
+    color : rgb(146, 86, 220);
   }
 }
-
-/*
-@keyframes lettre {
-  0% {
-    color: hsl(267deg, 66%, 60%);
-    text-shadow: 0 0 8px #772bd4;
-  }
-  80% {
-    color: hsl(317deg, 100%, 74%);
-    text-shadow: none;
-  }
-  100% {
-    color: hsl(165deg, 56%, 74%);
-    text-shadow: 0 0 8px hsl(165deg, 56%, 74%);
-  }
-}
-*/
 
 .lds-default {
   position: absolute;
   width: 120px;
   height: 120px;
+  right: 0px;
+  bottom: 300px;
 }
 
 .lds-default div {
@@ -130,8 +135,8 @@ h2 {
   height: 6px;
   background: hsl(267deg, 66%, 60%);
   border-radius: 50%;
-  -webkit-animation: lds-default 2s linear;
-          animation: lds-default 2s linear;
+  -webkit-animation: lds-default 3s linear;
+          animation: lds-default 3s linear;
 }
 
 .lds-default div:nth-child(1) {
@@ -245,25 +250,6 @@ h2 {
   }
 }
 
-@keyframes lds-default {
-  0%, 20% {
-    transform: scale(1.5);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(2.5);
-    opacity: 0.5;
-  }
-  80% {
-    transform: scale(1.5);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -271,7 +257,7 @@ h2 {
 }
 .logo .logo img {
   padding-top: 25px;
-}*/
+}
 
 .logo img {
   width: 45%;
@@ -329,9 +315,9 @@ h2 {
 .fonction {
   height: 400px;
 }
-.fonction h1 {
-  padding-top: 30px;
-  padding-left: 20px;
+.fonction h2 {
+  font-size: 28px;
+  padding: 30px 20px;
 }
 
 .list {
@@ -341,6 +327,7 @@ h2 {
   height: 100px;
   margin-left: 30px;
 }
+
 .list .choice, .list .compose, .list .eat, .list p {
   background-color: rgb(249, 246, 246);
   border-radius: 20px;
@@ -350,6 +337,10 @@ h2 {
   margin-bottom: 20px;
   padding-bottom: 2px;
   cursor: pointer;
+}
+
+.choice, .compose, .eat{
+  box-shadow: 3px 3px 5px rgb(224, 222, 222);
 }
 
 .list i {
@@ -385,16 +376,17 @@ li {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 1400px;
+  height: 1300px;
   padding-top: 35px;
-  background-color: rgb(250, 246, 246);
+  background-color: rgb(249, 246, 246);
 }
 
-#rest-list h1 {
+#rest-list h2 {
   margin-left: -170px;
   margin-bottom: 0;
+  font-size: 28px;
 }
-.rest-details h2 {
+.rest-details h3 {
   position: absolute;
   top: 190px;
 }
@@ -414,6 +406,7 @@ li {
   border-radius: 25px;
   background-color: white;
   overflow: hidden;
+  box-shadow: 3px 3px 5px rgb(224, 222, 222);
 }
 .restaurants img {
   width: 150%;
