@@ -10,15 +10,9 @@ body {
   font-family: Roboto;
 }
 
-h1 {
+h1, h2 {
   font-size: 28px;
 }
-
-h2 {
-  font-size: 20px;
-  color: black;
-}
-
 /*# sourceMappingURL=main.css.map */
 /*# sourceMappingURL=main.css.map */
 .wrapper {
@@ -316,7 +310,6 @@ h2 {
   height: 400px;
 }
 .fonction h2 {
-  font-size: 28px;
   padding: 30px 20px;
 }
 

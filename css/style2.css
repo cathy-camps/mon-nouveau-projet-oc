@@ -97,7 +97,7 @@ h2{
 
 .entry, .dish, .pudding{
   display: flex;
-  width: 340px;
+  width: 90%;
   height: 70px;
   margin: 15px;
   overflow: hidden;
@@ -121,10 +121,12 @@ h2{
 }
 
 .price{
-  flex-grow: 1;
-  width: 60px;
+  flex-shrink: 1;
+  font-size: 14px;
+  width: 40px;
   background: white;
   font-weight: bold;
+  padding-top: 40px;
 }
   
 .box{
@@ -144,44 +146,12 @@ h2{
 }
 
 .entry:hover > .box{
-  width: 100px;
+  width: 120px;
 }
 
 .entry:hover > .box .check{
  transform: rotate(0deg);
 }
-
-/*
-.check{
-  position: absolute;
-  height: 70px;
-  width: 80px;
-  left: 320px;
-  border-radius: 0px 15px 15px 0px;
-  top: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: transform 200ms ease-in-out;
-}
-
-.entry .check:hover{
-  background-color: hsl(165, 56%, 74%);
-  opacity: 1;
-  transform: translate(-50px);
-}
-
-.check i{
-  opacity: 0;
-  padding: 32px;
-  margin: 4px 15px 20px -4px;
-}
-
-.check i:hover{
-  transform: rotate(360deg);
-  color: white;
-  transition: transform 1s;
-  opacity: 1;
-}*/
 
 .dish{
   position: relative;

@@ -62,11 +62,11 @@ body {
   padding-left: 10px;
 }
 
-.container .heart2{
+/*.container .heart2{
   display: flex;
   justify-content: space-between;
   position: relative;
-}
+}*/
 
 .heart2 i{
   position:absolute;
@@ -75,17 +75,23 @@ body {
 }
 
 .entries, .dishes, .puddings, h2{
-  font-family: Shrikland, sans-serif;
   font-size: 18px;
   font-weight: lighter;
   color: rgb(67, 66, 66);
   margin : 0px 0px 20px 10px;
-  cursor: pointer;
 }
 
 h2{
   border-bottom: 3px solid hsl(165, 56%, 74%);
   width: 45px;
+}
+
+/*
+.price{
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  /*transform: translate(-30px);
 }
 
 .entries{
@@ -103,33 +109,34 @@ h2{
   }
 }
 .entry,.dish,.pudding{
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  justify-content: space-between;
   position: relative;
   background-color: white;
   border-radius: 15px;
   margin: 10px;
   width: 90%;
   height: 70px;
-  overflow: hidden;
+  /*overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   box-shadow:  2px 3px 5px 2px rgb(218, 214, 214);
   transition: padding-right 500ms ease-in-out;
-  }
+  transform: translate(-30px);  
+}
 
-  .entry p{
+  /*.entry,.dish,.pudding p{
     display: flex;
     justify-content: space-between;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  /*.entry p:hover{
-    transform: translate(-30px);
   }*/
 
+  /*.description{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }*/
+
+  /*
 .check{
   position: absolute;
   height: 70px;
@@ -139,31 +146,35 @@ h2{
   top: 0;
   bottom: 0;
   opacity: 0;
-  transition: transform 300ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 
-.check:hover{
+.entry .check:hover{
   background-color: hsl(165, 56%, 74%);
   opacity: 1;
-  transform: translate(-30px);
+  transform: translate(-50px);
 }
 
 .check i{
   opacity: 0;
-  padding: 30px;
+  padding: 32px;
+  margin: 4px 15px 20px -4px;
 }
 
 .check i:hover{
-  padding-top: 30px;
-  padding-right: 30px;
   transform: rotate(360deg);
   color: white;
   transition: transform 1s;
   opacity: 1;
 }
 
-p strong{
+/*p span{
   transform: translate(-30px);
+}*/
+
+.description{
+  flex-grow: 1;
+  width: 100px;
 }
 
 .dish{
@@ -259,4 +270,4 @@ footer p {
   margin-left: 30px;
 }
 .logo-img2::before{
-  content: "";
+  content: "";}
