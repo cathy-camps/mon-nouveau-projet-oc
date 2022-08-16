@@ -72,7 +72,7 @@ body {
   font-size: 18px;
   font-weight: lighter;
   color: rgb(67, 66, 66);
-  margin : 0px 0px 20px 10px;
+  margin : 0px 0px 20px 20px;
 }
 
 h2{
@@ -82,11 +82,11 @@ h2{
 
 .entries{
   position: relative;
-  animation : entry 3s;
+  animation : entries 3s;
   margin-top: 20px;
 }
 
-@keyframes entry{
+@keyframes entries{
   from {
     opacity: 0;
   }
@@ -155,11 +155,11 @@ h2{
 
 .dish{
   position: relative;
-  animation : dish 4s;
+  animation : dishes 4s;
   margin-top: 20px;
 }
 
-@keyframes dish{
+@keyframes dishes{
   from {
     opacity: 0;
   }
@@ -169,20 +169,12 @@ h2{
 }
 
 .pudding{
-  width: 90%;
-  height: 70px;
-  background-color: white;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
-
-.pudding{
   position: relative;
-  animation : pudding 5s;
+  animation : puddings 5s;
   margin-top: 20px;
 }
 
-@keyframes pudding{
+@keyframes puddings{
   from {
     opacity: 0;
   }
