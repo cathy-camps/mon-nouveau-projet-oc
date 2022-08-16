@@ -31,7 +31,7 @@ h1, h2 {
   right: 0;
   bottom: 0;
   left: 0;
-  animation : wrapper 3500ms forwards;
+  animation : wrapper 3000ms forwards;
 }
 
 @keyframes wrapper{
@@ -225,7 +225,7 @@ h1, h2 {
   left: 62px;
 }
 
-@-webkit-keyframes lds-default {
+@keyframes lds-default {
   0%, 20% {
     transform: scale(1.5);
     opacity: 1;
@@ -332,6 +332,18 @@ h1, h2 {
   cursor: pointer;
 }
 
+.list .eat{
+  background-color: hsl(269, 72%, 94%);
+}
+
+.eat p{
+  background-color: hsl(269, 72%, 94%);
+}
+
+.eat .fa-store{
+  color: hsl(267, 66%, 50%);
+}
+
 .choice, .compose, .eat{
   box-shadow: 3px 3px 5px rgb(224, 222, 222);
 }
@@ -382,11 +394,13 @@ li {
 .rest-details h3 {
   position: absolute;
   top: 190px;
+  left: 20px;
 }
 
 .rest-details p {
   position: absolute;
   top: 220px;
+  left: 20px;
   color: rgb(125, 122, 122);
   z-index: 2;
 }
@@ -399,6 +413,7 @@ li {
   border-radius: 25px;
   background-color: white;
   overflow: hidden;
+  cursor: pointer;
   box-shadow: 3px 3px 5px rgb(224, 222, 222);
 }
 .restaurants img {
@@ -415,20 +430,20 @@ li {
 }
 
 .new{
-  position: relative;
+  position:absolute;
+  top: 10px;
+  right: 30px;
   color: rgb(49, 153, 118);
+  background-color:  hsl(165, 56%, 74%);
   text-align:center;
   font-size: 14px;
+  width: 70px;
+  height: 26px;
+  padding: 5px;
 }
 
 .new::after{
   content: "Nouveau";
-  position:absolute;
-  top: 10px;
-  left: 230px;
-  width: 80px;
-  height: 26px;
-  background-color:  hsl(165, 56%, 74%);
 }
 
 .btn-favorite {
