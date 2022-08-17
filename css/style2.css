@@ -146,11 +146,11 @@ h2{
   transform: rotate(360deg);
 }
 
-.entry:hover > .box{
-  width: 120px;
+.entry:hover .box{
+  width: 80px;
 }
 
-.entry:hover > .box .check{
+.entry:hover .box .check{
  transform: rotate(0deg);
 }
 
@@ -169,6 +169,14 @@ h2{
   }
 }
 
+.dish:hover .box{
+  width: 80px;
+}
+
+.dish:hover .box .check{
+ transform: rotate(0deg);
+}
+
 .pudding{
   position: relative;
   animation : puddings 5s;
@@ -182,6 +190,14 @@ h2{
   to {
     opacity: 1;
   }
+}
+
+.pudding:hover .box{
+  width: 80px;
+}
+
+.pudding:hover .box .check{
+ transform: rotate(0deg);
 }
 
 .btn {
@@ -240,3 +256,5 @@ footer p {
 }
 .logo-img2::before{
   content: "";}
+
+

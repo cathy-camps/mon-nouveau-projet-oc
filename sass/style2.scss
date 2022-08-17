@@ -22,8 +22,7 @@ body {
     @include header;}
     .logo img{
         width: 55%;
-        padding-top: 25px;
-        padding-bottom: 15px;
+        padding: 25px 50px 15px 50px;
     }
 
     .logo i{
@@ -41,9 +40,11 @@ body {
       .container{
         display: flex;
         flex-direction: column;
+        position: absolute;
         width: 100%;
+        height: 1250px;
         padding-top: 0px;
-        background-color: rgb(247, 245, 245);
+        background-color: $color-background;
         padding-top: 20px;
         border-radius: 40px;
         & h1{
@@ -55,9 +56,6 @@ body {
 
         .container p{
           font-size: 16px;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
           padding-left: 10px;
         & .heart2{
             display: flex;
