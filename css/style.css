@@ -391,10 +391,12 @@ li {
   margin-bottom: 0;
   font-size: 28px;
 }
+
 .rest-details h3 {
-  position: absolute;
-  top: 190px;
+  position: relative;
+  top: 150px;
   left: 20px;
+  color: black;
 }
 
 .rest-details p {
@@ -412,8 +414,8 @@ li {
   height: 260px;
   border-radius: 25px;
   background-color: white;
-  overflow: hidden;
   cursor: pointer;
+  overflow: hidden;
   box-shadow: 3px 3px 5px rgb(224, 222, 222);
 }
 .restaurants img {
