@@ -38,13 +38,18 @@ h1, h2 {
   0%{
     opacity : 1;
   }
-  70%{
+  20%{
+    opacity: 0.8;
+  }
+  50%{
     opacity: 0.5;
+  }
+  70%{
+    opacity: 0.3;
   }
   100%{
     opacity: 0;
-  }
-}
+  }}
 
 .loading {
   position: absolute;
@@ -54,16 +59,22 @@ h1, h2 {
   justify-content: flex-start;
   align-items: center;
   margin-right: -50px;
-  margin-bottom: 70px;
+  margin-bottom: -70px;
   opacity: 1;
-  /*transition: opacity 3s ease-in-out;*/
   animation: lettre 3s linear;
 }
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+  .loading {
+    margin-right:-350px;
+    margin-bottom: 100px;
+  } }
 
 .loading .lettre {
   font-size: 40px;
   font-family: Shrikhand, sans-serif; 
   letter-spacing: 6px;
+  color:hsl(267, 66%, 50%);
 }
 
 .lettre:nth-child(1) {
@@ -111,7 +122,7 @@ h1, h2 {
     color: rgb(255, 122, 217);
   }
   100% {
-    color : rgb(146, 86, 220);
+    color : rgb(154, 103, 215);
   }
 }
 
@@ -122,6 +133,12 @@ h1, h2 {
   right: 0px;
   bottom: 300px;
 }
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+  .lds-default{
+    bottom: 520px;
+    right: 200px;
+  }}
 
 .lds-default div {
   position: absolute;
@@ -321,6 +338,15 @@ h1, h2 {
   margin-left: 30px;
 }
 
+@media only screen and (min-width: 769px) and (max-width:992px){
+.list {
+  margin-left: 60px;
+} 
+.fonction h2{
+  padding : 30px 60px;
+}
+}
+
 .list .choice, .list .compose, .list .eat, .list p {
   background-color: rgb(249, 246, 246);
   border-radius: 20px;
@@ -386,17 +412,36 @@ li {
   background-color: rgb(249, 246, 246);
 }
 
+@media only screen and (min-width: 769px) and (max-width:992px){
+  #rest-list{
+    height: auto;
+  }
+}
+
 #rest-list h2 {
   margin-left: -230px;
   margin-bottom: 0;
   font-size: 28px;
 }
 
+@media only screen and (min-width: 769px) and (max-width:992px){
+  #rest-list h2{
+    margin-left: -530px;
+  }}
+
+
 .rest-details h3 {
   position: relative;
   top: 150px;
   left: 20px;
   color: black;
+}
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+.rest-details h3 {
+  top: 340px;
+  font-size: 24px;
+}
 }
 
 .rest-details p {
@@ -406,6 +451,13 @@ li {
   color: rgb(125, 122, 122);
   z-index: 2;
 }
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+  .rest-details p {
+    top: 430 px;
+    font-size: 20px;
+  }
+  }
 
 .restaurants {
   position: relative;
@@ -418,6 +470,12 @@ li {
   overflow: hidden;
   box-shadow: 3px 3px 5px rgb(224, 222, 222);
 }
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+  .restaurants{
+   height: 520px;
+  }}
+
 .restaurants img {
   width: 150%;
   height: 190px;
@@ -431,6 +489,11 @@ li {
   transform: translate(-50%, -75%);
 }
 
+@media only screen and (min-width: 769px) and (max-width:992px){
+  .restaurants img{
+    height: 380px;
+  }}
+
 .new{
   position:absolute;
   top: 10px;
@@ -443,6 +506,14 @@ li {
   height: 26px;
   padding: 5px;
 }
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+  .new{
+    width: 140px;
+    height: 52px;
+    font-size: 26px;
+    top: 30px;
+  }}
 
 .new::after{
   content: "Nouveau";
@@ -471,6 +542,12 @@ li {
   bottom: -2px;
 }
 
+@media only screen and (min-width: 769px) and (max-width:992px){
+.heart, .heart--full {
+  font-size: 30px;
+  bottom: 60px;
+}}
+
 .heart:hover {
   color: transparent;
   opacity: 0;
@@ -493,6 +570,11 @@ footer {
   height: 240px;
   line-height: 1.8;
 }
+
+@media only screen and (min-width: 769px) and (max-width:992px){
+  footer {
+  margin-top: 50px;}}
+
 footer p {
   color: white;
   font-size: 20px;
@@ -521,3 +603,17 @@ footer p {
 .logo-img2::before {
   content: "";
 }/*# sourceMappingURL=style.css.map */
+
+@media only screen and (min-width: 769px) and (max-width:992px) {
+  footer p {
+    margin-left: 90px;
+  }
+  .logo-img2{
+    margin-left: 60px;
+  }
+  .nav i {
+    margin-left: 60px;
+  }
+  .infos p, a {
+    margin-left: 70px;
+  }}
