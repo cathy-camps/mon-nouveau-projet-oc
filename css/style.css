@@ -577,6 +577,9 @@ footer p {
     left: 150px;
     top: -70px;
   }
+  .loading .lettre {
+    font-size: 55px;
+  }
   .lds-default {
     top: 420px;
     right: 150px;
@@ -617,6 +620,55 @@ footer p {
     font-size: 30px;
     bottom: 35px;
   }
+}
+/* version desktop */
+@media only screen and (min-width: 993px) {
+  .loading {
+    left: 350px;
+    top: -70px;
+  }
+  .loading .lettre {
+    font-size: 65px;
+  }
+  .lds-default {
+    top: 390px;
+    right: 350px;
+  }
+  .logo {
+    margin: 40px 0;
+  }
+  .btn {
+    width: 300px;
+  }
+  .fonction {
+    height: 150px;
+  }
+  .list {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 60px;
+  }
+  .list p {
+    display: flex;
+    justify-content: center;
+  }
+  .choice, .compose, .eat {
+    width: 340px;
+    height: 80px;
+  }
+  .list i {
+    display: flex;
+    position: relative;
+  }
+  #rest-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 769px) {
   footer p {
     margin-left: 90px;
   }

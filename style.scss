@@ -448,6 +448,9 @@
           .loading{
             left: 150px;
             top: -70px;
+            & .lettre {
+              font-size: 55px;
+             }
           }
           .lds-default{
           top: 420px;
@@ -488,21 +491,70 @@
       .heart, .heart--full{
         font-size: 30px;
         bottom: 35px;
-      }  
-      footer p{
-        margin-left: 90px;
+      } 
       }
-      .logo-img2{
+
+      /* version desktop */
+      @media only screen and (min-width: 993px){
+        .loading{
+          left: 350px;
+          top: -70px;
+         & .lettre {
+          font-size: 65px;
+         }
+        }
+        .lds-default{
+        top: 390px;
+        right: 350px;
+      }
+      .logo{
+        margin: 40px 0;
+      }
+      .btn{
+        width: 300px;
+      }
+      .fonction{
+        height: 150px;
+      }
+      .list{
+        display: flex;
+        justify-content: space-around;
         margin-left: 60px;
-        width: 150px;
+      & p{
+        display: flex;
+        justify-content: center;
+      }}
+      .choice, .compose, .eat{
+        width: 340px;
+        height: 80px;
       }
-      .nav i{
-        margin-left: 60px;
+      .list i{
+        display: flex;
+        position: relative;
       }
-      .infos p, a{
-        margin-left: 60px;
+      #rest-list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: auto;
+        padding-bottom: 60px;
       }
       }
+
+      @media only screen and (min-width: 769px){
+        footer p{
+          margin-left: 90px;
+        }
+        .logo-img2{
+          margin-left: 60px;
+          width: 150px;
+        }
+        .nav i{
+          margin-left: 60px;
+        }
+        .infos p, a{
+          margin-left: 60px;
+        }}
       
 
          
