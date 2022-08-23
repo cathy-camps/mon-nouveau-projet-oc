@@ -1,27 +1,33 @@
-@import "./utils/_variables";
-@import "./base/_base.typography";
-@import"./components/_buttons";
-@import"./layouts/_header";
+@import "./sass/utils/variables";
+@import "./sass/base/base.typography";
+@import"./sass/components/buttons";
+@import"./sass/layouts/header";
+@import"./sass/utils/mixins";
 /*# sourceMappingURL=main.css.map */
 
-@media screen and (min-width: 375px) and (max-width:768px){
-}
 
 .wrapper{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: url(images/loading-ohmyfood.png);
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  position: fixed;
-  top:0px;
-  animation: loading-remove 2s forwards;
-}
+ @include wrapper;
+ }
+
+
+@keyframes wrapper{
+  0%{
+    opacity : 1;
+  }
+  20%{
+    opacity: 0.8;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  70%{
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 0;
+    z-index: -2;
+  }}
 
 .loading{
   position: absolute;
@@ -30,48 +36,54 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  opacity : 0;
-  transition: opacity 2s ease-in-out;
+  opacity : 1;
+  animation: lettre 3s linear;
   & .lettre{
     font-size: 40px;
     font-family: Shrikhand, sans-serif;
+    letter-spacing: 6px;
+    color: $color-primary;
   }
 }
 
 .lettre:nth-child(1){
-  animation-delay: 0.1s;
+  animation-delay: 0.2s;
+  text-shadow: 0 0 7px $color-secondary;
   &:nth-child(2){
-    animation-delay: 0.2s;
+    animation-delay: 0.35s;
+    text-shadow: 0 0 7px $color-secondary;
   }
   &:nth-child(3){
-    animation-delay: 0.3s;
+    animation-delay: 0.5s;
+    text-shadow: 0 0 7px $color-secondary;
   }
   &:nth-child(4){
-    animation-delay: 0.4s;
+    animation-delay: 0.65s;
+    text-shadow: 0 0 7px $color-secondary;
   }
   &:nth-child(5){
-    animation-delay: 0.5s;
+    animation-delay: 0.8s;
+    text-shadow: 0 0 7px $color-secondary;
   }
   &:nth-child(6){
-    animation-delay: 0.6s;
+    animation-delay: 0.9s;
+    text-shadow: 0 0 7px $color-secondary;
   }
   &:nth-child(7){
-    animation-delay: 0.7s;
+    animation-delay: 1s;
+    text-shadow: 0 0 7px $color-secondary;
   }
 }
 
 @keyframes lettre{
   0%{
     color: $color-primary;
-    text-shadow: 0 0 8px $color-dark;
   }
   80%{
     color: $color-secondary;
-    text-shadow: none;
   }
   100%{
-    color: $color-tertiary;
-    text-shadow: 0 0 8px $color-tertiary;
+    color: $color-primary;
   }
 }
 
@@ -79,6 +91,8 @@
     position: absolute;
     width: 120px;
     height: 120px;
+    right: 0px;
+    bottom:270px;
   }
 
   .lds-default div {
@@ -87,7 +101,7 @@
     height: 6px;
     background: $color-primary;
     border-radius: 50%;
-    animation: lds-default 2s linear;
+    animation: lds-default 3s linear;
   }
   .lds-default div:nth-child(1) {
     background: $color-secondary;
@@ -181,7 +195,8 @@
    @include header;
   }
   .logo img{
-    width: 45%;}
+    width: 45%;
+    padding-top: 25px;}
 
 .form-location{
     margin-top: 20px;
@@ -204,11 +219,10 @@
     } 
 
     .presentation {
-      background-color: rgb(250, 246, 246); 
+      background-color: $color-background; 
       height: 280px;
       padding-top: 20px;
       text-align: center;
-
       & p{
         font-size: 20px;
         color: grey;
@@ -224,28 +238,39 @@
       }
 
       .fonction {
-        height: 400px;
-        & h1{
-        padding-top: 30px;
-        padding-left: 20px;
-      }}
+       display: flex;
+      }
+
+      h2{
+        padding: 30px;}
 
       .list {
         position: relative;
         list-style: none;
         width: 85%;
-        height: 100px;
+        height: 320px;
         margin-left: 30px;
-          & .choice,.compose,.eat, p{
-          background-color: rgb(249, 246, 246);
+          & .choice,.compose,.eat{
+          background-color: $color-background;
           border-radius: 20px;
           font-size: 17px;
           font-weight: bold;
           text-align: center;
-          margin-bottom: 20px;
-          padding-bottom: 2px;
+          margin-bottom: 30px;
+          padding-bottom: 26px;
           cursor: pointer;
+          box-shadow: 3px 3px 5px hsl(0°, 3%, 87%);
           }}
+
+          .list .eat{
+            background-color: hsl(269, 72%, 94%);
+            & p{
+            background-color: hsl(269, 72%, 94%);
+            }
+          }
+        .eat .fa-store{
+          color:$color-primary;
+        }
   
           .list i{
           color: grey;
@@ -275,39 +300,28 @@
       }
 
       #rest-list{
-        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 1400px;
-        padding-top: 35px;
-        background-color: rgb(250, 246, 246);
-        & h1{
-        margin-left: -220px;
-        margin-bottom: 0;
-        }
-        & h2{
-          position: absolute;
-          top: 200px;
-        }
-        & p{
-          position: absolute;
-          top: 240px;
-          color: rgb(125, 122, 122);
-          z-index: 1;
-        }  
+        height: 1200px;
+        background-color: $color-background; 
       }
+        section h2{
+          padding-bottom: 0px;
+          background-color: $color-background;
+        }
 
         .restaurants{
           position: relative;
-          display: block;
           margin-top: 30px;
-          width: 85%;
-          height: 280px;
+          width: 340px;
+          height: 260px;
           border-radius: 25px;
           background-color: white;
           overflow: hidden;
+          cursor: pointer;
+          box-shadow: 3px 3px 5px hsl(0°, 3%, 87%);
             & img{
               width: 150%;
               height: 190px;
@@ -320,22 +334,47 @@
               transform : translate(-50%, -75%);
             }}
 
-            .rest-details{
-                width: 500px;
-                height: 90px;
-                background-color: white;
+            .rest-details h3{
+                top:190px;
+                left: 20px;
+                color: black;
                 position: absolute;
+                font-size: 18px;
+            }
+
+            .rest-details p{
+              position: absolute;
+              top: 215px;
+              left: 20px;
+              font-size: 16px;
+              color: hsl(0, 1%, 35%);
+            }
+
+            .new{
+              position: absolute;
+              top: 10px;
+              right: 30px;
+              color: hsl(165, 48%, 37%);
+              background-color: $color-tertiary;
+              text-align: center;
+              font-size: 14px;
+              width: 70px;
+              height: 26px;
+              padding: 5px;
+            }
+
+            .new::after{
+              content: "Nouveau";
             }
 
             .btn-favorite {
               position: absolute;
               width: 18px;
               height: 18px;
-              right: 35px;
-              bottom: 50px;
+              right: 40px;
+              bottom: 40px;
               border: none;
               background: none;
-              font-size: 24px;
             }
             
             .heart--full{
@@ -383,6 +422,10 @@
           color: white;
           margin-top: 13px;
           margin-left: 30px;
+        }
+
+        .fa-handshake-simple{
+          rotate: 45deg;
         }
 
         .infos p, a{
