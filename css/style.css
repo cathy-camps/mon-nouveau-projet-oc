@@ -10,47 +10,66 @@ body {
   font-family: Roboto;
 }
 
-h1, h2 {
+h1 {
   font-size: 28px;
 }
+
 /*# sourceMappingURL=main.css.map */
 /*# sourceMappingURL=main.css.map */
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  background-image: url(../images/loading-ohmyfood.png);
+  background: url(images/loading-ohmyfood.png);
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 100;
   position: fixed;
   top: 0px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  animation : wrapper 3500ms forwards;
+  -webkit-animation: wrapper 3500ms forwards;
+          animation: wrapper 3500ms forwards;
 }
 
-@keyframes wrapper{
-  0%{
-    opacity : 1;
+@-webkit-keyframes wrapper {
+  0% {
+    opacity: 1;
   }
-  20%{
+  20% {
     opacity: 0.8;
   }
-  50%{
+  50% {
     opacity: 0.5;
   }
-  70%{
+  70% {
     opacity: 0.3;
   }
-  100%{
+  100% {
     opacity: 0;
-  }}
+    z-index: -2;
+  }
+}
 
+@keyframes wrapper {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
 .loading {
   position: absolute;
   width: 100%;
@@ -58,87 +77,83 @@ h1, h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-right: -50px;
-  margin-bottom: -70px;
   opacity: 1;
-  animation: lettre 3s linear;
+  -webkit-animation: lettre 3s linear;
+          animation: lettre 3s linear;
 }
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-  .loading {
-    margin-right:-350px;
-    margin-bottom: 100px;
-  } }
-
 .loading .lettre {
   font-size: 40px;
-  font-family: Shrikhand, sans-serif; 
+  font-family: Shrikhand, sans-serif;
   letter-spacing: 6px;
-  color:hsl(267, 66%, 50%);
+  color: hsl(267deg, 66%, 60%);
 }
 
 .lettre:nth-child(1) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
 }
-
-.lettre:nth-child(2) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
+.lettre:nth-child(1):nth-child(2) {
   -webkit-animation-delay: 0.35s;
           animation-delay: 0.35s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
 }
-.lettre:nth-child(3) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
+.lettre:nth-child(1):nth-child(3) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
 }
-.lettre:nth-child(4) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
+.lettre:nth-child(1):nth-child(4) {
   -webkit-animation-delay: 0.65s;
           animation-delay: 0.65s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
 }
-.lettre:nth-child(5) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
+.lettre:nth-child(1):nth-child(5) {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
 }
-.lettre:nth-child(6) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
+.lettre:nth-child(1):nth-child(6) {
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
 }
-.lettre:nth-child(7) {
-  text-shadow: 0 0 7px rgb(255, 122, 217);
+.lettre:nth-child(1):nth-child(7) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+  text-shadow: 0 0 7px hsl(317deg, 100%, 74%);
+}
+
+@-webkit-keyframes lettre {
+  0% {
+    color: hsl(267deg, 66%, 60%);
+  }
+  80% {
+    color: hsl(317deg, 100%, 74%);
+  }
+  100% {
+    color: hsl(267deg, 66%, 60%);
+  }
 }
 
 @keyframes lettre {
   0% {
-    color: rgb(146, 86, 220);
+    color: hsl(267deg, 66%, 60%);
   }
-  50% {
-    color: rgb(255, 122, 217);
+  80% {
+    color: hsl(317deg, 100%, 74%);
   }
   100% {
-    color : rgb(154, 103, 215);
+    color: hsl(267deg, 66%, 60%);
   }
 }
-
 .lds-default {
   position: absolute;
   width: 120px;
   height: 120px;
   right: 0px;
-  bottom: 300px;
+  bottom: 270px;
 }
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-  .lds-default{
-    bottom: 520px;
-    right: 200px;
-  }}
 
 .lds-default div {
   position: absolute;
@@ -242,7 +257,7 @@ h1, h2 {
   left: 62px;
 }
 
-@keyframes lds-default {
+@-webkit-keyframes lds-default {
   0%, 20% {
     transform: scale(1.5);
     opacity: 1;
@@ -261,6 +276,24 @@ h1, h2 {
   }
 }
 
+@keyframes lds-default {
+  0%, 20% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
 .logo {
   display: flex;
   align-items: center;
@@ -272,6 +305,7 @@ h1, h2 {
 
 .logo img {
   width: 45%;
+  padding-top: 25px;
 }
 
 .form-location {
@@ -296,7 +330,7 @@ h1, h2 {
 }
 
 .presentation {
-  background-color: rgb(250, 246, 246);
+  background-color: hsl(0deg, 20%, 97%);
   height: 280px;
   padding-top: 20px;
   text-align: center;
@@ -324,54 +358,41 @@ h1, h2 {
 }
 
 .fonction {
-  height: 400px;
+  display: flex;
 }
-.fonction h2 {
-  padding: 30px 20px;
+
+h2 {
+  padding: 30px;
 }
 
 .list {
   position: relative;
   list-style: none;
   width: 85%;
-  height: 100px;
+  height: 320px;
   margin-left: 30px;
 }
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-.list {
-  margin-left: 60px;
-} 
-.fonction h2{
-  padding : 30px 60px;
-}
-}
-
-.list .choice, .list .compose, .list .eat, .list p {
-  background-color: rgb(249, 246, 246);
+.list .choice, .list .compose, .list .eat {
+  background-color: hsl(0deg, 20%, 97%);
   border-radius: 20px;
   font-size: 17px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
-  padding-bottom: 2px;
+  margin-bottom: 30px;
+  padding-bottom: 26px;
   cursor: pointer;
+  box-shadow: 3px 3px 5px hsl(0deg, 3%, 87%);
 }
 
-.list .eat{
-  background-color: hsl(269, 72%, 94%);
+.list .eat {
+  background-color: hsl(269deg, 72%, 94%);
+}
+.list .eat p {
+  background-color: hsl(269deg, 72%, 94%);
 }
 
-.eat p{
-  background-color: hsl(269, 72%, 94%);
-}
-
-.eat .fa-store{
-  color: hsl(267, 66%, 50%);
-}
-
-.choice, .compose, .eat{
-  box-shadow: 3px 3px 5px rgb(224, 222, 222);
+.eat .fa-store {
+  color: hsl(267deg, 66%, 60%);
 }
 
 .list i {
@@ -402,80 +423,30 @@ li {
 }
 
 #rest-list {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 1300px;
-  padding-top: 35px;
-  background-color: rgb(249, 246, 246);
+  height: 1200px;
+  background-color: hsl(0deg, 20%, 97%);
 }
 
-@media only screen and (min-width: 769px) and (max-width:992px){
-  #rest-list{
-    height: auto;
-  }
+section h2 {
+  padding-bottom: 0px;
+  background-color: hsl(0deg, 20%, 97%);
 }
-
-#rest-list h2 {
-  margin-left: -230px;
-  margin-bottom: 0;
-  font-size: 28px;
-}
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-  #rest-list h2{
-    margin-left: -530px;
-  }}
-
-
-.rest-details h3 {
-  position: relative;
-  top: 150px;
-  left: 20px;
-  color: black;
-}
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-.rest-details h3 {
-  top: 340px;
-  font-size: 24px;
-}
-}
-
-.rest-details p {
-  position: absolute;
-  top: 220px;
-  left: 20px;
-  color: rgb(125, 122, 122);
-  z-index: 2;
-}
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-  .rest-details p {
-    top: 430 px;
-    font-size: 20px;
-  }
-  }
 
 .restaurants {
   position: relative;
   margin-top: 30px;
-  width: 85%;
+  width: 340px;
   height: 260px;
   border-radius: 25px;
   background-color: white;
-  cursor: pointer;
   overflow: hidden;
-  box-shadow: 3px 3px 5px rgb(224, 222, 222);
+  cursor: pointer;
+  box-shadow: 3px 3px 5px hsl(0deg, 3%, 87%);
 }
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-  .restaurants{
-   height: 520px;
-  }}
-
 .restaurants img {
   width: 150%;
   height: 190px;
@@ -489,33 +460,36 @@ li {
   transform: translate(-50%, -75%);
 }
 
-@media only screen and (min-width: 769px) and (max-width:992px){
-  .restaurants img{
-    height: 380px;
-  }}
+.rest-details h3 {
+  top: 190px;
+  left: 20px;
+  color: black;
+  position: absolute;
+  font-size: 18px;
+}
 
-.new{
-  position:absolute;
+.rest-details p {
+  position: absolute;
+  top: 215px;
+  left: 20px;
+  font-size: 16px;
+  color: hsl(0deg, 1%, 35%);
+}
+
+.new {
+  position: absolute;
   top: 10px;
   right: 30px;
-  color: rgb(49, 153, 118);
-  background-color:  hsl(165, 56%, 74%);
-  text-align:center;
+  color: hsl(165deg, 48%, 37%);
+  background-color: hsl(165deg, 56%, 74%);
+  text-align: center;
   font-size: 14px;
   width: 70px;
   height: 26px;
   padding: 5px;
 }
 
-@media only screen and (min-width: 769px) and (max-width:992px){
-  .new{
-    width: 140px;
-    height: 52px;
-    font-size: 26px;
-    top: 30px;
-  }}
-
-.new::after{
+.new::after {
   content: "Nouveau";
 }
 
@@ -538,22 +512,16 @@ li {
 .heart, .heart--full {
   font-size: 24px;
   position: absolute;
-  left: 0;
+  left: 0px;
   bottom: -2px;
 }
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-.heart, .heart--full {
-  font-size: 30px;
-  bottom: 60px;
-}}
 
 .heart:hover {
   color: transparent;
   opacity: 0;
 }
 
-.heart--full:hover, .btn-favorite:active {
+.heart--full:hover, .btn:active {
   opacity: 1;
   background: linear-gradient(to top right, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
   -webkit-background-clip: text;
@@ -570,11 +538,6 @@ footer {
   height: 240px;
   line-height: 1.8;
 }
-
-@media only screen and (min-width: 769px) and (max-width:992px){
-  footer {
-  margin-top: 50px;}}
-
 footer p {
   color: white;
   font-size: 20px;
@@ -586,6 +549,10 @@ footer p {
   color: white;
   margin-top: 13px;
   margin-left: 30px;
+}
+
+.fa-handshake-simple {
+  rotate: 45deg;
 }
 
 .infos p, a {
@@ -603,17 +570,3 @@ footer p {
 .logo-img2::before {
   content: "";
 }/*# sourceMappingURL=style.css.map */
-
-@media only screen and (min-width: 769px) and (max-width:992px) {
-  footer p {
-    margin-left: 90px;
-  }
-  .logo-img2{
-    margin-left: 60px;
-  }
-  .nav i {
-    margin-left: 60px;
-  }
-  .infos p, a {
-    margin-left: 70px;
-  }}
