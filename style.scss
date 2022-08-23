@@ -443,6 +443,67 @@
           content: "";
         }}
 
+        /*version tablette*/
+        @media only screen and (min-width: 769px) and (max-width: 992px){
+          .loading{
+            left: 150px;
+            top: -70px;
+          }
+          .lds-default{
+          top: 420px;
+          right: 150px;
+        }
+        .list{
+          margin-left: 60px;
+          margin-bottom: 40px;
+        }
+        h2{
+          padding-left: 60px;
+        }
+      #rest-list{
+        height: auto;
+        padding-bottom: 60px;
+      }
+      .restaurants{
+        height: 480px;
+        width: 620px;
+        & img{
+          height: 440px;
+        }
+      }
+      .rest-details h3{
+        top: 380px;
+        font-size: 24px;}
+
+      .rest-details p{
+          margin-top: 200px;
+          font-size: 20px;
+        }
+      .new{
+        width: 140px;
+        height: 48px;
+        font-size: 26px;
+        top: 30px;
+        }
+      .heart, .heart--full{
+        font-size: 30px;
+        bottom: 35px;
+      }  
+      footer p{
+        margin-left: 90px;
+      }
+      .logo-img2{
+        margin-left: 60px;
+        width: 150px;
+      }
+      .nav i{
+        margin-left: 60px;
+      }
+      .infos p, a{
+        margin-left: 60px;
+      }
+      }
+      
 
          
 
