@@ -172,7 +172,7 @@ h2 {
   transform: rotate(360deg);
 }
 
-.entry:hover .box {
+.entry:hover .box .entry:active .box {
   width: 80px;
 }
 
@@ -204,7 +204,7 @@ h2 {
     opacity: 1;
   }
 }
-.dish:hover .box {
+.dish:hover .box .dish:active .box {
   width: 80px;
 }
 
@@ -236,7 +236,7 @@ h2 {
     opacity: 1;
   }
 }
-.pudding:hover .box {
+.pudding:hover .box .pudding:active .box {
   width: 80px;
 }
 

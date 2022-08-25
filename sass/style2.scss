@@ -142,7 +142,7 @@ body {
       }
 
       .entry:hover .box
-      /*.entry:active .box*/ {
+      .entry:active .box {
         width: 80px; 
       }
 
@@ -166,7 +166,7 @@ body {
        }
 
        .dish:hover .box
-       /*.dish:active .box*/ {
+       .dish:active .box {
          width: 80px; 
        }
 
@@ -190,7 +190,7 @@ body {
       }
 
       .pudding:hover .box
-      /*.pudding:active .box*/ {
+      .pudding:active .box {
         width: 80px;
       }
 
