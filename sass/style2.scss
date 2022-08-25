@@ -131,7 +131,7 @@
       }
 
       .entry:hover .box
-      .entry:active .box {
+      &:active .box {
         width: 80px; 
       }
 
@@ -155,7 +155,7 @@
        }
 
        .dish:hover .box
-       .dish:active .box {
+       &:active .box{
          width: 80px; 
        }
 
@@ -179,7 +179,7 @@
       }
 
       .pudding:hover .box
-      .pudding:active .box {
+      &:active .box {
         width: 80px;
       }
 
