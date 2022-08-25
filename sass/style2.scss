@@ -4,17 +4,6 @@
 @import"./layouts/header";
 @import"./utils/mixins";
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Roboto, sans-serif;
-}
 
 .logo{
     @include header;}
@@ -142,7 +131,7 @@ body {
       }
 
       .entry:hover .box
-      .entry:active .box {
+      /*.entry:active .box*/ {
         width: 80px; 
       }
 
@@ -166,7 +155,7 @@ body {
        }
 
        .dish:hover .box
-       .dish:active .box {
+       /*.dish:active .box*/ {
          width: 80px; 
        }
 
@@ -190,7 +179,7 @@ body {
       }
 
       .pudding:hover .box
-      .pudding:active .box {
+      /*.pudding:active .box*/ {
         width: 80px;
       }
 
@@ -242,8 +231,8 @@ body {
         margin-left: 30px;
       }
 
-      .fa-handshake-simple{
-        rotate: 45deg;
+      .fa-handshake-simple {
+        transform: rotate(45deg);
       }
 
       .infos p, a{
@@ -263,7 +252,7 @@ body {
 
       /* version tablette */
 
-      @media only screen and (min-width:769px) and (max-width:992px){
+      @media only screen and (min-width:768px) and (max-width:991px){
         .photo-accueil img{
           height:440px;
         }

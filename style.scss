@@ -3,13 +3,10 @@
 @import"./sass/components/buttons";
 @import"./sass/layouts/header";
 @import"./sass/utils/mixins";
-/*# sourceMappingURL=main.css.map */
-
 
 .wrapper{
  @include wrapper;
  }
-
 
 @keyframes wrapper{
   0%{
@@ -424,8 +421,8 @@
           margin-left: 30px;
         }
 
-        .fa-handshake-simple{
-          rotate: 45deg;
+        .fa-handshake-simple {
+          transform: rotate(45deg);
         }
 
         .infos p, a{
@@ -444,7 +441,7 @@
         }}
 
         /*version tablette*/
-        @media only screen and (min-width: 768px) and (max-width: 992px){
+        @media only screen and (min-width: 768px) and (max-width: 991px){
           .loading{
             left: 150px;
             top: -70px;
@@ -545,7 +542,7 @@
       }
       }
 
-      @media only screen and (min-width: 769px){
+      @media only screen and (min-width: 768px){
         footer p{
           margin-left: 90px;
         }
