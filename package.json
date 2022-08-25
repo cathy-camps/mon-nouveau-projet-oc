@@ -4,7 +4,7 @@
   "description": "Formation développeur web OpenClassrooms Projet n°3 : ohmyfood : dynamiser une page web avec des animations CSS",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss: ./css/style.css, ./sass/style2.scss: ./css/style2.css"
+    "sass": "sass --watch ./sass/style.scss: ./css/style.css, ./sass/style2.scss: ./css/style2.css --style compact"
   },
   "repository": {
     "type": "git",
