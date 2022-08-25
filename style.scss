@@ -444,7 +444,7 @@
         }}
 
         /*version tablette*/
-        @media only screen and (min-width: 769px) and (max-width: 992px){
+        @media only screen and (min-width: 768px) and (max-width: 992px){
           .loading{
             left: 150px;
             top: -70px;
@@ -495,7 +495,7 @@
       }
 
       /* version desktop */
-      @media only screen and (min-width: 993px){
+      @media only screen and (min-width: 992px){
         .loading{
           left: 350px;
           top: -70px;
@@ -523,6 +523,7 @@
       & p{
         display: flex;
         justify-content: center;
+        margin-top: -20px;
       }}
       .choice, .compose, .eat{
         width: 340px;

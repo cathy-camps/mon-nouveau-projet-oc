@@ -1,10 +1,8 @@
-@import "./utils/_variables";
-@import"./components/_buttons";
-@import"./layouts/_header";
-/*# sourceMappingURL=main.css.map */
-
-@media screen and (min-width: 375px) and (max-width:768px){
-}
+@import"./utils/variables";
+@import"./base/base.typography";
+@import"./components/buttons";
+@import"./layouts/header";
+@import"./utils/mixins";
 
 *,
 ::before,
@@ -21,10 +19,9 @@ body {
 .logo{
     @include header;}
     .logo img{
-        width: 55%;
-        padding: 25px 50px 15px 50px;
-    }
-
+        width: 75%;
+        padding: 25px 50px 15px 50px;}
+    
     .logo i{
         color: black;
         margin-top: 15px;
@@ -37,67 +34,129 @@ body {
         object-fit: cover;
       }
 
+      main{
+        display: flex;
+        flex-direction: column;
+      }
+
       .container{
         display: flex;
         flex-direction: column;
         position: absolute;
         width: 100%;
-        height: 1250px;
-        padding-top: 0px;
+        height: 1280px;
         background-color: $color-background;
-        padding-top: 20px;
-        border-radius: 40px;
+        border-radius: 40px 40px 0px 0px;
+        margin-top: -10px;
         & h1{
-          font-family: Shrikhand, sans-serif;}
+          font-family: Shrikhand, sans-serif;
+          margin-left: 40px;
+          font-style: italic;
+          font-size: 26px;
+        }
         & h3{
           font-size: 18px;
-          padding: 15px 0px 5px 10px;
+          padding-left: 20px;
         }}
 
-        .container p{
-          font-size: 16px;
-          padding-left: 10px;
-        & .heart2{
+        .heart2{
             display: flex;
-            justify-content: space-between;
-            position: relative;
+            gap: 20px;
+            align-items: baseline;
         }
-      
-        .heart2 i{
-          position:absolute;
-          top: 20px;
-          right: 30px;
-        }
-      }
       
       .entries, .dishes, .puddings, h2{
-        font-family: Shrikhand, sans-serif;
         font-size: 18px;
         font-weight: lighter;
         color: rgb(67, 66, 66);
-        margin : 0px 0px 20px 10px;
+        margin : 0px 0px 20px 20px;
       }
       
-      .entries{
+      h2{
+        border-bottom: 3px solid hsl(165, 56%, 74%);
+        width: 45px;
+      }
+      .entry{
         position: relative;
         animation : entry 3s;
         margin-top: 20px;
       }
-       .check{
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        color: hsl(165, 56%, 74%);
+
+      @keyframes entry{
+        from {
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }
       }
 
-      p strong{
-        font-weight: bold;
-        white-space: nowrap;
+      .entry, .dish, .pudding{
+        display: flex;
+        width: 90%;
+        height: 70px;
+        margin: 15px;
         overflow: hidden;
-        text-overflow: ellipsis;
+        cursor: pointer;
+        position: relative;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 2px 3px 5px 2px rgb(218, 214, 214);
       }
-       
-       @keyframes entry{
+
+      .description{
+        flex-grow: 1;
+        width: 260px;
+        background: white;
+        &, p, h3{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding: 5px 10px;
+        }
+      }
+
+      .price{
+        flex-shrink: 1;
+        font-size: 14px;
+        width: 40px;
+        background: white;
+        font-weight: bold;
+        padding-top: 40px;
+      }
+
+      .box{
+        display: flex;
+        width: 0px;
+        transition: all 1s;
+        background-color: hsl(165, 56%, 74%);
+      }
+
+       .check{
+        margin: auto;
+        border-radius: 50%;
+        background-color: white;
+        color: hsl(165, 56%, 74%);
+        transition: transform 1s;
+        transform: rotate(360deg);
+      }
+
+      .entry:hover .box
+      /*.entry:active .box*/ {
+        width: 80px; 
+      }
+
+      .entry:hover .box .check{
+        transform: rotate(0deg);
+      }
+
+      .dish{
+        position: relative;
+        animation: dish 4s;
+        margin-top: 20px;
+      }
+
+       @keyframes dish{
          from {
            opacity: 0;
          }
@@ -105,41 +164,175 @@ body {
            opacity: 1;
          }
        }
+
+       .dish:hover .box
+       /*.dish:active .box*/ {
+         width: 80px; 
+       }
+
+       .dish:hover .box.check{
+        transform: rotate(0deg);
+       }
       
-       .entry{
-        width: 90%;
-        height: 70px;
-        background-color: white;
-        border-radius: 15px;
-        margin-bottom: 20px;
+       .pudding{
         position: relative;
-        z-index: 1;
+        animation: pudding 5s;
+        margin-top: 20px;
+      }
+
+      @keyframes pudding{
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .pudding:hover .box
+      /*.pudding:active .box*/ {
+        width: 80px;
+      }
+
+      .pudding:hover .box.check{
+        transform: rotate(0deg);
+       }
+
+       .btn-commander{
+        display: flex;
+        justify-content: center;
+        padding-top: 1100px;
+      }
+
+       .btn{
+        border-radius: 30px;
+        position: relative;
+        cursor: pointer;
         overflow: hidden;
+        width: 58%;
+        height: 50px;
+        color: white;
+        border: 4px solid rgb(237, 234, 234);
+        background: linear-gradient(to bottom, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+       }
+
+       .btn:active{
+        background: linear-gradient(to bottom, hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+       }
+
+       footer{
+        display:flex;
+        position: relative;
+        background-color: rgb(62, 59, 59);
+        width: 100%;
+        height: 240px;
+        line-height: 1.8;
+        margin-top: 60px;
+        & p{
+          color: white;
+          font-size: 20px;
+          margin-left: 70px;
+        }
       }
+
+      .nav i{
+        position: absolute;
+        color: white;
+        margin-top: 13px;
+        margin-left: 30px;
+      }
+
+      .fa-handshake-simple{
+        rotate: 45deg;
+      }
+
+      .infos p, a{
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+      }
+
+      .logo-img2{
+        width: 35%;
+        margin-top: 40px;
+        margin-left: 30px;
+      &::before{
+        content: "";
+      }}
+
+      /* version tablette */
+
+      @media only screen and (min-width:769px) and (max-width:992px){
+        .photo-accueil img{
+          height:440px;
+        }
+         .fa-heart{
+          margin-left: 60px;
+         } 
+         .entries{
+          margin-top: 20px;
+         }
+        .btn{
+          width: 300px;
+        }}
+
+        @media only screen and (min-width:768px){
+          .container{
+            margin-top: -30px;
+            & h1{
+              font-size: 38px;
+              margin-top: 40px;
+              white-space: nowrap;
+            }}
+          .footer p{
+          margin-left: 90px;
+        }
+        .logo-img2{
+          margin-left: 40px;
+          width: 150px;
+        }
+        .nav i{
+          margin-left: 40px;
+        }
+        .infos p, a{
+          margin-left: 40px;
+        }
+      }
+
+      @media only screen and (min-width:992px){
+     .logo img{
+      width: 500px;
+     }
+     .photo-accueil img{
+      height: 500px;
+     }
+     .container{
+      flex-direction: row;
+      height: 660px;
+     }
+     .fa-heart{
+      margin-left: 100px;
+     }
+     .entries, .dishes, .puddings{
+      padding-top: 130px;}
+     .entries{
+      margin-left: -500px;
+      margin-right: 60px;
+     }
+     .entry, .dish, .pudding{
+      width: 400px;
+     }
+     .btn{
+      width: 360px;}
+      .btn-commander{
+        padding-top: 480px;
+      }
+     }
+
       
-      .entry::after{
-      content: "";
-      background-color: white;
-      position: absolute;
-      z-index: -1;
-      display: block;
-      transition : all 0.35s;
-      }
+ 
       
-      .entry:hover::after{
-        background-color: hsl(165, 56%, 74%);
-        top: 0;
-        left: 280px;
-        right: 0;
-        bottom: 0;
-        transition: all 0.35s;
-      }
-      
-      .entry::after{
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        right: -50%;
-      }
+     
 
 
