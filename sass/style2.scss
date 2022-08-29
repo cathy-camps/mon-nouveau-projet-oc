@@ -65,20 +65,6 @@
         border-bottom: 3px solid hsl(165, 56%, 74%);
         width: 45px;
       }
-      .entry{
-        position: relative;
-        animation : entry 3s;
-        margin-top: 20px;
-      }
-
-      @keyframes entry{
-        from {
-          opacity: 0;
-        }
-        to{
-          opacity: 1;
-        }
-      }
 
       .entry, .dish, .pudding{
         display: flex;
@@ -130,18 +116,32 @@
         transform: rotate(360deg);
       }
 
-      .entry:hover .box
-      &:active .box {
+      .entry{
+        position: relative;
+        animation : entry 2s;
+        margin-top: 20px;
+      }
+
+      @keyframes entry{
+        from {
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }
+      }
+
+      .entry:hover .box{
         width: 80px; 
       }
 
-      .entry:hover .box .check{
+      .entry:hover .box.check{
         transform: rotate(0deg);
       }
 
       .dish{
         position: relative;
-        animation: dish 4s;
+        animation: dish 2.5s;
         margin-top: 20px;
       }
 
@@ -154,8 +154,7 @@
          }
        }
 
-       .dish:hover .box
-       &:active .box{
+       .dish:hover .box{
          width: 80px; 
        }
 
@@ -165,7 +164,7 @@
       
        .pudding{
         position: relative;
-        animation: pudding 5s;
+        animation: pudding 3s;
         margin-top: 20px;
       }
 
@@ -178,8 +177,7 @@
         }
       }
 
-      .pudding:hover .box
-      &:active .box {
+      .pudding:hover .box {
         width: 80px;
       }
 
