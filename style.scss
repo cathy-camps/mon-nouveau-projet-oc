@@ -229,7 +229,7 @@
       .btn{
         @include buttons;
         margin-top: 30px;
-        &:active{
+        &:hover{
           background: linear-gradient(to bottom, $color-light, $color-dark);
         }
       }
