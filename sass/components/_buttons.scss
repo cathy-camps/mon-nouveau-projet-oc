@@ -8,6 +8,10 @@
   box-shadow: 0px 5px 7px 5px rgb(181, 175, 175);
   color: white;
   border: none;
-  background: linear-gradient(to bottom, $color-secondary, $color-primary);
-}
+  background: linear-gradient(to bottom, $color-secondary, $color-primary)
+  }
+
+  @mixin buttons-hover{
+    box-shadow: 0px 5px 7px 5px rgb(124, 120, 120); 
+  }
  
