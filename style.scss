@@ -231,6 +231,7 @@
         margin-top: 30px;
         &:hover{
           background: linear-gradient(to bottom, $color-light, $color-dark);
+          @include buttons-hover;
         }
       }
 
